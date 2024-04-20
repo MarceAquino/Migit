@@ -36,7 +36,14 @@ suma = sumar_digitos(numero)
 print(f"La suma de los dígitos de {numero} es: {suma}")
 # ----------------------------------------------------------------------------------------------------------------------------
 def calcular_numero_fibonacci(numero: int) -> int:
-    
+    """_summary_
+
+    Args:
+        numero (int): _description_
+
+    Returns:
+        int: _description_
+    """
     if numero <= 1:
         return numero
     else:
