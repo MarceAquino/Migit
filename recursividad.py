@@ -46,12 +46,3 @@ numero = get_int("Ingrese el numero de Fibonacci que quiere calcular: ","Error",
 resultado = calcular_numero_fibonacci(numero)
 print(f"El número de Fibonacci de {numero} es: {resultado}")
 # ----------------------------------------------------------------------------------------------------------------------------
-def calcular_potencia(base: int, exponente: int) -> int:
-
-    calcular = base * exponente
-    return calcular
-
-base = 2
-exponente = 8
-resultado = calcular_potencia(base, exponente)
-print(f"La potencia de {base} elevado al {exponente} es: {resultado}")
