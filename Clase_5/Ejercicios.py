@@ -103,7 +103,11 @@ def reemplazar_nombres (lista_nombres:list,nombre_buscado:str, reemplazo:str) ->
 contador_reemplazo = reemplazar_nombres(lista_nombres, "María" ,"Sabri")  
 print (f"La cantidad de reemplazos fueron: {contador_reemplazo} y la lista final es {lista_nombres}")
 #---------------------------------------------------------------------------------------------------------------
+
+
 # MEJORADOS 
+
+
 # """1)Escribir una función que reciba una lista de enteros, la misma calculará y devolverá el promedio de todos los números.
 # 2)Escribir una función parecida a la anterior, pero la misma deberá calcular y devolver el promedio de los números positivos.
 # 3)Escribir una función que calcule y retorne el producto de todos los elementos de la lista que recibe como parámetro.
