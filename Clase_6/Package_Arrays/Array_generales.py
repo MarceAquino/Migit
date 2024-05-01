@@ -8,7 +8,9 @@ lista = [-1] * 10
 validar = False
 
 #------------------------------------------------------------------------------
+
 def seleccionar_opcion_a(lista: list) -> None:
+
     """Pide al usuario ingresar 10 números enteros en el rango de -1000 a 1000.
     Args:
         lista (list): La lista donde se almacenarán los números ingresados.
@@ -20,6 +22,7 @@ def seleccionar_opcion_a(lista: list) -> None:
 #------------------------------------------------------------------------------    
     
 def contador_positivos_negativos(lista: list) -> None:
+
     """Cuenta la cantidad de números positivos y negativos en la lista dada.
     Args:
         lista (list): La lista de números a analizar.
@@ -39,6 +42,7 @@ def contador_positivos_negativos(lista: list) -> None:
 #------------------------------------------------------------------------------
 
 def sumar_pares(lista: list) -> None:
+
     """Calcula la suma de todos los números pares en la lista dada.
     Args:
         lista (list): La lista de números a sumar.
@@ -50,8 +54,10 @@ def sumar_pares(lista: list) -> None:
         if validar_pariedad(lista[i]) == True:
             suma_pares += lista[i]       
     print(f"La suma total de numeros pares es: {suma_pares}")
+
 #------------------------------------------------------------------------------
 def calcular_max_impar(lista: list) -> None:
+
     """Encuentra el número impar más alto en la lista dada.
     Args:
         lista (list): La lista de números a analizar.
@@ -70,6 +76,7 @@ def calcular_max_impar(lista: list) -> None:
 #------------------------------------------------------------------------------
 
 def listar_numeros(lista: list) -> None:
+
     """ Imprime todos los números en la lista dada.
     Args:
         lista (list): La lista de números a imprimir.
@@ -81,6 +88,7 @@ def listar_numeros(lista: list) -> None:
 #------------------------------------------------------------------------------
 
 def listar_numeros_pares(lista: list) -> None:
+
     """ Imprime todos los números pares en la lista dada.
     Args:
         lista (list): La lista de números a imprimir.
@@ -93,6 +101,7 @@ def listar_numeros_pares(lista: list) -> None:
 #------------------------------------------------------------------------------
 
 def listar_indices_impares(lista: list) -> None:
+
     """ Imprime los números en los índices impares de la lista dada.
     Args:
         lista (list): La lista de números.
@@ -101,6 +110,7 @@ def listar_indices_impares(lista: list) -> None:
     for i in range(len(lista)):
         if validar_pariedad(i) == False:
             print(f"Los números en los índices impares son: {lista[i]}")
+
 #------------------------------------------------------------------------------
 
 while True:
