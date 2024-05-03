@@ -1,3 +1,4 @@
+from colorama import init, Fore
 #----------------------------------------------------------------------------------------------------------------------------------
 def crear_matriz (filas:int,columnas:int)-> list:
 
@@ -13,7 +14,7 @@ def crear_matriz (filas:int,columnas:int)-> list:
     nueva_matriz = [[0]*columnas    for _ in range(filas)]  
     for i in range(len(nueva_matriz)): 
         for j in range(len(nueva_matriz[i])): 
-            nueva_matriz [i][j] = int(input (f"Ingrese un numero a cargar en la fila {i+1} y en la columna {j+1}: "))
+            nueva_matriz [i][j] = int(input (Fore.GREEN+ f"Ingrese un numero a cargar en la fila {i+1} y en la columna {j+1}: " +Fore.RESET))
     return nueva_matriz 
        
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -49,5 +50,18 @@ def multiplicar_matriz (matriz_a:list,matriz_b:list,matriz_resultado:list)->list
         for j in range (len(matriz_b[0])): # Recorre las columnas de B
             for k in range(len(matriz_b)): # Recorre las filas de B y opera 
                 matriz_resultado[i][j] += matriz_a[i][k] * matriz_b[k][j]
+                print (matriz_resultado)
     return matriz_resultado            
 #----------------------------------------------------------------------------------------------------------------------------------
+
+       
+    
+    # for i in range(len(matriz1)):
+    #     fila = []
+    #     for j in range(len(matriz2[0])):
+    #         suma = 0
+    #         for k in range(len(matriz2)):
+    #             suma += matriz1[i][k] * matriz2[k][j]
+    #         fila += [suma]
+    #     resultado += [fila]
+    # return resultado
