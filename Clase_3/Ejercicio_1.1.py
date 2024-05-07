@@ -28,6 +28,9 @@ def get_float (mensaje:str,mensaje_error:str,minimo:float,maximo:float,reitentos
     return numero 
     
 
+
+
+
 print (get_float("Hola ingrese un numero decimal del 1 al 10: ","Error, ingrese un numero del 1 al 10: ",0,10,2))    
 
 def get_string (mensaje:str,mensaje_error:str,longitud:int,reitentos:int)->str|None:
