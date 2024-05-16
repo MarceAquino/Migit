@@ -1,4 +1,4 @@
-from colorama import init, Fore, Style
+from colorama import Fore, Style
 
 class Boligrafo:
     def __init__(self, color: str, grosor: str) -> None:
@@ -6,13 +6,13 @@ class Boligrafo:
         self.cantidad_tinta = 80
         self.grosor_punta = grosor
         self.color = color
-        
+
     def estilo_color(self) -> str:
-        if self.color.lower() == "rojo":
+        if self.color == "rojo":
             return Fore.RED
-        elif self.color.lower() == "azul":
+        elif self.colo == "azul":
             return Fore.BLUE
-        elif self.color.lower() == "verde":
+        elif self.color == "verde":
             return Fore.GREEN
         else:
             return ""       
