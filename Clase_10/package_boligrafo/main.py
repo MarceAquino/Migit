@@ -1,7 +1,13 @@
 from class_boligrafo import * 
 
-boligrafo_1 = Boligrafo("Fino","Azul")
-boligrafo_2 = Boligrafo("Grueso","Rojo")
 
-print(boligrafo_1.escribir("La verdad este tema esta bastante complicado"))
-print(boligrafo_1.recargar(30))
+boligrafo_1 = Boligrafo(input("Ingrese el color del bolígrafo (rojo/verde/azul): "),
+                        input("Ingrese el grosor del bolígrafo (Fino/Grueso): "))
+
+texto_a_escribir = input("Ingrese el texto que desea escribir: ")
+print(boligrafo_1.escribir(texto_a_escribir))
+
+recargar_lapicera = input("¿Desea recargar la lapicera? (si/no): ")
+if recargar_lapicera.lower() == "si":
+    cantidad_tinta = input("Ingrese la cantidad de tinta a recargar: ")
+    print(boligrafo_1.recargar(cantidad_tinta))
