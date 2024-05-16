@@ -6,8 +6,7 @@ class Boligrafo:
         self.cantidad_tinta = 80
         self.grosor_punta = grosor
         self.color = color
-       
-
+        
     def estilo_color(self) -> str:
         if self.color.lower() == "rojo":
             return Fore.RED
@@ -16,8 +15,8 @@ class Boligrafo:
         elif self.color.lower() == "verde":
             return Fore.GREEN
         else:
-            return "" 
-            
+            return ""       
+        
     def escribir(self, texto: str) -> str:
         longitud = len(texto)
         texto_con_color = f"{self.estilo_color()}{texto}{Style.RESET_ALL}" 
@@ -29,8 +28,6 @@ class Boligrafo:
             respuesta = f"No hay suficiente tinta. La cantidad de tinta actual es {self.cantidad_tinta}%. El texto ingresado tiene {longitud} caracteres."
         
         return respuesta
-
-
     def recargar(self,cantidad_recargar:str) -> str|int:
         cantidad_recargar = int(cantidad_recargar)
         suma_tinta = self.cantidad_tinta+ cantidad_recargar
