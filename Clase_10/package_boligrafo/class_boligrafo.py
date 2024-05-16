@@ -8,23 +8,27 @@ class Boligrafo:
 
     def escribir(self, texto: str) -> str:
         longitud = len(texto)
+    
         if self.cantidad_tinta >= longitud:
             self.cantidad_tinta -= longitud
-            respuesta = texto
+            respuesta = f"¨{texto} la longitud del texto es de {longitud} caracteres, La tinta restante es % {self.cantidad_tinta}"
         else:
-            respuesta = "No alcanza la tinta"
+            respuesta = f"No alcanza la tinta, la cantidad de tinta actual es: % {self.cantidad_tinta} y el texto ingresado es de {longitud} caracteres." 
         return respuesta
 
     def recargar(self, cantidad_recargar: int) -> str:
-        suma_tinta = self.cantidad_tinta + cantidad_recargar
+
+        suma_tinta = self.cantidad_tinta+ cantidad_recargar
         if suma_tinta <= self.capacidad_tinta_maxima:
             self.cantidad_tinta = suma_tinta
-            respuesta = "Lapicera recargada"
+            respuesta = f"Lapicera recargada el cartucho quedo cargado en un % {self.cantidad_tinta}"
         else:
             diferencia_de_tinta = suma_tinta - self.capacidad_tinta_maxima
             self.cantidad_tinta = self.capacidad_tinta_maxima
-            respuesta = f"Se recargó la lapicera y sobró {diferencia_de_tinta}"
+            respuesta = f"Se recargó la lapicera un % {cantidad_recargar} y sobró  % {diferencia_de_tinta}"
         return respuesta
+
+
 
 
 
