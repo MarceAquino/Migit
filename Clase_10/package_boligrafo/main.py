@@ -2,7 +2,7 @@ from class_boligrafo import *
 
 
 boligrafo_1 = Boligrafo(input("Ingrese el color del bolígrafo (rojo/verde/azul): "),
-                        input("Ingrese el grosor del bolígrafo (Fino/Grueso): "))
+                        input("Ingrese el grosor del bolígrafo (fino/grueso): "))
 
 texto_a_escribir = input("Ingrese el texto que desea escribir: ")
 print(boligrafo_1.escribir(texto_a_escribir))

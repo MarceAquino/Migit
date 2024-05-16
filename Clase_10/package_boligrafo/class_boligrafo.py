@@ -10,16 +10,21 @@ class Boligrafo:
     def estilo_color(self) -> str:
         if self.color == "rojo":
             return Fore.RED
-        elif self.colo == "azul":
+        elif self.color == "azul":
             return Fore.BLUE
         elif self.color == "verde":
             return Fore.GREEN
         else:
             return ""       
-        
+    def estilo_grosor(self) -> str:
+        if self.grosor_punta == "grueso":
+            return Style.BRIGHT
+        else:
+            return ""
+            
     def escribir(self, texto: str) -> str:
         longitud = len(texto)
-        texto_con_color = f"{self.estilo_color()}{texto}{Style.RESET_ALL}" 
+        texto_con_color = f"{self.estilo_grosor()}{self.estilo_color()}{texto}{Style.RESET_ALL}"
         
         if self.cantidad_tinta >= longitud:
             self.cantidad_tinta -= longitud
