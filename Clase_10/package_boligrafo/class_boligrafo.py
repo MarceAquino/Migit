@@ -53,7 +53,7 @@ class Boligrafo:
                 respuesta = f"Se recargó la lapicera un % {cantidad_recargar} y sobró  % {diferencia_de_tinta}"
 
             else:
-                respuesta = "Muchas gracias por por no desperdiciar la tinta que tenga un buen dia." 
+                respuesta = "Muchas gracias por no desperdiciar la tinta que tenga un buen dia." 
 
 
         return respuesta
