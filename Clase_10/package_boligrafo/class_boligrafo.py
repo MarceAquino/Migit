@@ -45,13 +45,13 @@ class Boligrafo:
             respuesta = f"Lapicera recargada el cartucho quedo cargado en un % {self.cantidad_tinta}"
 
         else:
-            continuar = input("La cantidad de tinta a recargar es mayor que la capacidad de la lapizera desea continuar si/no : ")
+            continuar = input("La cantidad de tinta a recargar es mayor que la capacidad de la lapicera desea continuar si/no : ")
 
             if continuar == "si":
                 diferencia_de_tinta = suma_tinta - self.capacidad_tinta_maxima
                 self.cantidad_tinta = self.capacidad_tinta_maxima
                 respuesta = f"Se recargó la lapicera un % {cantidad_recargar} y sobró  % {diferencia_de_tinta}"
-                
+
             else:
                 respuesta = "Muchas gracias por por no desperdiciar la tinta que tenga un buen dia." 
 
