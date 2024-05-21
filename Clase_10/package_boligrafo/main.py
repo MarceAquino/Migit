@@ -1,7 +1,8 @@
 from class_boligrafo import * 
 
 print("\nBuenos dias, vamos a configurar su boligrafo digital.\n")
-boligrafo_1 = Boligrafo(input("Ingrese el color del bolígrafo (rojo/verde/azul): "),
+
+boligrafo_1 = Boligrafo(input("Ingrese el color del bolígrafo (rosa/verde/azul): "),
                         input("Ingrese el grosor del bolígrafo (fino/grueso): "))
 
 texto_a_escribir = input("Ingrese el texto que desea escribir: ")
@@ -15,8 +16,9 @@ while True:
         break
 
 
-recargar_lapicera = input("¿Desea recargar la lapicera? (si/no): ")
-if recargar_lapicera.lower() == "si":
+recargar_boligrafo = input("¿Desea recargar la lapicera? (si/no): ")
+if recargar_boligrafo.lower() == "si":
     cantidad_tinta = input("Ingrese la cantidad de tinta a recargar: ")
     print(boligrafo_1.recargar(cantidad_tinta))
+
   

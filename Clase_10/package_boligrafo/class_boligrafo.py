@@ -1,6 +1,7 @@
 from colorama import Fore, Style
 
 class Boligrafo:
+
     def __init__(self, color: str, grosor: str) -> None:
         self.capacidad_tinta_maxima = 100
         self.cantidad_tinta = 80
@@ -8,8 +9,8 @@ class Boligrafo:
         self.color = color
 
     def estilo_color(self) -> str:
-        if self.color == "rojo":
-            return Fore.RED
+        if self.color == "rosa":
+            return Fore.MAGENTA
         elif self.color == "azul":
             return Fore.BLUE
         elif self.color == "verde":
@@ -31,7 +32,6 @@ class Boligrafo:
         if self.cantidad_tinta >= longitud:
             self.cantidad_tinta -= longitud
             respuesta = f"{texto_con_color} - La longitud del texto es de {longitud} caracteres. La tinta restante es {self.cantidad_tinta}%"
-
         else:
             respuesta = f"No hay suficiente tinta. La cantidad de tinta actual es {self.cantidad_tinta}%. El texto ingresado tiene {longitud} caracteres."    
         return respuesta
@@ -42,16 +42,15 @@ class Boligrafo:
         suma_tinta = self.cantidad_tinta+ cantidad_recargar
         if suma_tinta <= self.capacidad_tinta_maxima:
             self.cantidad_tinta = suma_tinta
-            respuesta = f"Lapicera recargada el cartucho quedo cargado en un % {self.cantidad_tinta}"
+            respuesta = f"boligrafo recargada el cartucho quedo cargado en un % {self.cantidad_tinta}"
 
         else:
-            continuar = input("La cantidad de tinta a recargar es mayor que la capacidad de la lapicera desea continuar si/no : ")
+            continuar = input("La cantidad de tinta a recargar es mayor que la capacidad de la boligrafo desea continuar si/no : ")
 
             if continuar == "si":
                 diferencia_de_tinta = suma_tinta - self.capacidad_tinta_maxima
                 self.cantidad_tinta = self.capacidad_tinta_maxima
-                respuesta = f"Se recargó la lapicera un % {cantidad_recargar} y sobró  % {diferencia_de_tinta}"
-
+                respuesta = f"Se recargó la boligrafo al %100 y sobró  % {diferencia_de_tinta}"
             else:
                 respuesta = "Muchas gracias por no desperdiciar la tinta que tenga un buen dia." 
 
