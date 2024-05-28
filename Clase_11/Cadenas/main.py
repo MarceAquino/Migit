@@ -29,15 +29,14 @@ parametros necesarios para lograr el objetivo y mantener independencia de códig
 bandera_validar = False
 
 while True:
-    opcion = input("Elegir una de estas opciones: ")
-    opcion = opcion.upper()    
+   
+    mostrar_opciones()
+    opcion = input("Ingrese una de las opciones: ")
+    opcion = opcion.upper() 
 #--------------------------------------------------------------------------------------
     if opcion == "A" and bandera_validar == False: 
         bandera_validar = True
-        for i in range (len(lista_videos)):
-            lista_videos[i].dividir_titulo()
-            lista_videos[i].obtener_codigo_url()
-            lista_videos[i].formatear_fecha()    
+        normalizar_datos(lista_videos)
 
     elif opcion == "H":
         continuar = input("¿Desea salir? si/no: ")
@@ -48,42 +47,18 @@ while True:
     elif bandera_validar:
 
             if opcion == "B":
-                for i in range(len(lista_videos)):
-                    mostrar = lista_videos[i].mostrar_tema()
+                mostrar_temas(lista_videos)
             elif opcion == "C":
-                for i in range(len(lista_videos)):
-                    for j in range(0, len(lista_videos) -i -1):
-                        if lista_videos[j].obtener_numero_sesion() > lista_videos[j+1].obtener_numero_sesion():
-                            aux = lista_videos[j]
-                            lista_videos[j] = lista_videos[j+1]
-                            lista_videos[j+1] = aux 
-                    mostrar = lista_videos[i].mostrar_tema()    
+                ordenar_temas(lista_videos)  
             elif opcion == "D":
-                suma = 0
-                for i in range(len(lista_videos)):
-                    suma += lista_videos[i].cantidad_vistas()
-                promedio = suma / len(lista_videos)
-                cantidad_k = promedio / 1000
-                print (f"el promedio de vista en k es: {cantidad_k}" )
+              
+                promediar_vistas(lista_videos)
             elif opcion == "E":
-                max_vistas = 0
-                for i in range(len(lista_videos)):
-                    if lista_videos[i].cantidad_vistas() > max_vistas:
-                        max_vistas = lista_videos[i].cantidad_vistas()    
-                print (f"el mas visto de vista en k es: {max_vistas}" ) 
+                buscar_maxima_reproduccion(lista_videos)        
             elif opcion == "F":
-                for i in range(len(lista_videos)):
-                    buscar = lista_videos[i].mostrar_url()
-                    buscar = buscar.count("nick")
-                    if buscar >= 1:
-                        lista_videos[i].mostrar_tema()            
+                buscar_por_codigo(lista_videos)
             elif opcion == "G":
-                colaborador = input("Ingrese el nombre de un colaborador: ")
-                for i in range(len(lista_videos)):
-                    buscar = lista_videos[i].mostrar_colaborador()
-                    buscar = buscar.count(colaborador)
-                    if buscar >= 1:
-                        lista_videos[i].mostrar_tema()  
+                listar_colaborador(lista_videos)
             else:
                 print("Error: ingrese una opción válida.")
     else:
@@ -93,4 +68,10 @@ while True:
 
 
 #--------------------------------------------------------------------------------------         +
+
+
+   
+               
+       
+
 
