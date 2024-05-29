@@ -4,6 +4,7 @@ from data import lista_empleados
 
 #--------------------------------------------------------------------------------------------
 def crear_empleado(id_actual: int)->dict:
+    
     nombre = validar_nombre_apellido("nombre").capitalize()
     apellido = validar_nombre_apellido("apellido").capitalize()
     puesto = validar_puesto().capitalize()

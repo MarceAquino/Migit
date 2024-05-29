@@ -12,6 +12,7 @@ def modificar_dato(validacion:str,clave:str)->str:
     return retorno    
 #----------------------------------------------------------------------------------------------------------------
 def eliminar_empleado(lista_empleados:list[dict])->None:
+    
     print("Ingrese el id del empleado a eliminar: ")
     id_empleado = validar_existencia_id(lista_empleados)
     for i in range(len(lista_empleados)):

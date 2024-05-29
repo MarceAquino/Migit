@@ -7,6 +7,7 @@ from crear_persona import *
 
 #----------------------------------------------------------------------------------------------------------------
 def mostrar_menu()->None:
+    
     print("""
         1. Dar de alta.
         2. Modificar.
@@ -18,6 +19,7 @@ def mostrar_menu()->None:
         """)
 #----------------------------------------------------------------------------------------------------------------  
 def mostar_menu(lista_empleados: list) -> None:
+
     print("\n=====¡Bienvenidos al programa para altas, bajas y modificaciones de empleados!=====\n")
     datos = {"id_actual": 1}
     while True:

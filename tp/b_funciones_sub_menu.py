@@ -3,6 +3,7 @@ from modificar_eliminar import *
 
 #----------------------------------------------------------------------------------------------------------------
 def mostrar_submenu()->None:
+    
     print("""
         a. Modificar el nombre del empleado.
         b. Modificar el apellido del empleado.
@@ -12,10 +13,12 @@ def mostrar_submenu()->None:
         """)
 #----------------------------------------------------------------------------------------------------------------   
 def submenu(lista_empleados: list[dict])->None:
+
     print("¡Bienvenido al menu de modificaciones!\n")
     validar_existencia_id(lista_empleados)
     retorno = ""
     bandera = False
+
     while True:
         mostrar_submenu()
         opcion = validar_opcion_menu()
