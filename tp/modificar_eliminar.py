@@ -1,17 +1,19 @@
 from data import lista_empleados
 from funciones_validaciones import *
 
-def modificar_dato(validacion:str,clave,elemento):
+def modificar_dato(validacion:str,clave:str)->str:
+    
     for i in range(len(lista_empleados)):
-        dato = {validacion}
+        dato = validacion
         lista_empleados[i][clave] = dato
-        retorno = f"se modifico el {elemento}."
+        retorno = f"se modifico el {clave}."
+
     return retorno    
 
- 
 def eliminar_empleado(lista_empleados:list[dict])->str:
     retorno = ""
     bandera_existe = False
+    print("Ingrese el id del empleado a eliminar: ")
     id_empleado = validar_existencia_id(lista_empleados)
     for i in range(len(lista_empleados)):
         if id_empleado == lista_empleados[i]["id"]:

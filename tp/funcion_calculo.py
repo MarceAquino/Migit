@@ -16,14 +16,14 @@ def sumar_salario(lista_empleados:dict,clave:str)-> int|float:
             suma += dato                       
     return suma
 #------------------------------------------------------------------------------------------------------------------------ 
-def dividir(dividendo: float, divisor: float) -> float:
-
+def dividir(dividendo: float, divisor: float) -> int | float:
+        
     mensaje_resultado = False
     mensaje_resultado = dividendo / divisor
 
     return mensaje_resultado
 #------------------------------------------------------------------------------------------------------------------------ 
-def calcular_promedio(lista_empleado:list,clave:str) -> str:
+def calcular_promedio(lista_empleado:list,clave:str) -> None:
 
     suma = sumar_salario(lista_empleado,clave)
     cantidad_empleados = len(lista_empleado)

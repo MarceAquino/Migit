@@ -15,10 +15,10 @@ def crear_empleado(id_actual: int)->dict:
     }
     return persona_nueva
 #--------------------------------------------------------------------------------------------
-def agregar_empelado(lista:list,datos:dict ,empleado:dict)->str:
+def agregar_empelado(lista_empleados:list[dict],datos:dict,empleado:dict)->str:
     
-    lista.append(empleado)
+    lista_empleados.append(empleado)
     datos["id_actual"] += 1
-    retorno = f"El empleado con el ID: {empleado['id']} fue agregado exitosamente"
+    retorno = f"\n¡El empleado con el ID: {empleado['id']} fue agregado exitosamente!"
     return retorno
 #--------------------------------------------------------------------------------------------

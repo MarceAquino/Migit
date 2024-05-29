@@ -2,7 +2,7 @@ from funciones_validaciones import *
 from modificar_eliminar import *
 
 #----------------------------------------------------------------------------------------------------------------
-def mostrar_submenu():
+def mostrar_submenu()->None:
     print("""
         a. Modificar el nombre del empleado.
         b. Modificar el apellido del empleado.
@@ -11,9 +11,8 @@ def mostrar_submenu():
         e. Salir
         """)
 #----------------------------------------------------------------------------------------------------------------   
-def submenu(lista_empleados: list[dict]):
-    print("¡Bienvenido al menu de modificaciones!")
-    print("Ingrese el ID a modificar")
+def submenu(lista_empleados: list[dict])->None:
+    print("¡Bienvenido al menu de modificaciones!\n")
     validar_existencia_id(lista_empleados)
     retorno = ""
     bandera = False
@@ -22,23 +21,26 @@ def submenu(lista_empleados: list[dict]):
         opcion = validar_opcion_menu()
         match opcion:
             case "a":
-                modificar_dato(validar_nombre_apellido("nombre: ").capitalize(),"nombre","nombre")
+                modificar_dato(validar_nombre_apellido("nombre: ").capitalize(),"nombre")
                 bandera = True
             case "b":
-                modificar_dato(validar_nombre_apellido("apellido: ").capitalize(),"apellido","apellido")
+                modificar_dato(validar_nombre_apellido("apellido: ").capitalize(),"apellido")
                 bandera = True
             case "c":
-                modificar_dato(validar_puesto(),"puesto","puesto")
+                modificar_dato(validar_puesto(),"puesto")
                 bandera = True
             case "d":
-                modificar_dato(validar_salario(),"salario","salario")
+                modificar_dato(validar_salario(),"salario")
                 bandera = True
             case "e":
-                if bandera == False:
-                    retorno = "no se realizaron cambios"
-                else:
-                    retorno = retorno
-                return retorno
+                continuar = input("¿Desea salir? si/no: ")
+                if continuar == "si":
+                    if bandera == False:
+                        retorno = "no se realizaron cambios"
+                    else:
+                        retorno = retorno
+                    return retorno
+                
                 
             case _:
                 print("No es una opcion válida")

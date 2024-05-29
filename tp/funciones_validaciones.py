@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------------------------------------------
-def validar_nombre_apellido(clave:str):
+def validar_nombre_apellido(clave:str)->str|None:
 
     identificacion = input (f"Ingrese el {clave}: ")
     longitud = len(identificacion)
@@ -12,7 +12,7 @@ def validar_nombre_apellido(clave:str):
         else:
             return identificacion
 #----------------------------------------------------------------------------------------------------------------
-def validar_puesto():
+def validar_puesto()->str:
     lista_puestos = ["Gerente","Supervisor","Analista","Encargado","Asistente"]
     puesto = input ("Ingrese el puesto: ").capitalize()
 
@@ -23,31 +23,32 @@ def validar_puesto():
                 return retorno
         retorno = print("Verifique que el campo ingresado sea un puesto valido.")
         puesto = input (f"Ingrese un puesto valido puesto: ").capitalize()
+            
 #----------------------------------------------------------------------------------------------------------------
-def validar_salario()->str:
+def validar_salario()->int:
     salario = input("Ingrese un salario: ")
     while salario.isnumeric() != True or int(salario) < 234315:
         salario = input ("Error ingrese solo numeros y un valor superior a $234315: ")
     salario = int(salario)
     return salario
 #----------------------------------------------------------------------------------------------------------------
-def validar_entero():
-    dato = input("Ingrese un numero valido: ")
+def validar_entero(mensaje:str)->int:
+    dato = input(mensaje)
     while dato.isnumeric() == False:
-        dato = input("Error: ")
+        dato = input("Error reingrese nuevamente un numero valido: ")
     dato = int(dato)
     return dato
 #----------------------------------------------------------------------------------------------------------------
-def validar_existencia_id(lista: list[dict])->str|int:
+def validar_existencia_id(lista: list[dict])->int:
     while True:
-        id_a_modificar = validar_entero()
+        id_a_modificar = validar_entero("Ingrese un ID : ")
         for i in range(len(lista)):
             if id_a_modificar == lista[i]['id']:
                 return id_a_modificar
-            
         print("ERROR. ID no encontrado")
+            
 #----------------------------------------------------------------------------------------------------------------       
-def validar_opcion_menu():
+def validar_opcion_menu()->str:
     eleccion = input("Ingrese la opcion que quiera modificar: ")
     lista_opciones_validar = ["a", "b", "c", "d", "e"]
     while True:
@@ -59,3 +60,11 @@ def validar_opcion_menu():
             for eleccion in lista_opciones_validar: 
                 return opcion
 #----------------------------------------------------------------------------------------------------------------
+def validad_lista(lista_empleados:list[dict])-> bool:
+    mensaje = False
+    longitud = len(lista_empleados)
+    if longitud > 0:
+        mensaje = True
+    return mensaje    
+
+        
