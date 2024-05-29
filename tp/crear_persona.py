@@ -1,4 +1,6 @@
 from funciones_validaciones import *
+from data import lista_empleados
+
 
 #--------------------------------------------------------------------------------------------
 def crear_empleado(id_actual: int)->dict:
@@ -20,6 +22,13 @@ def agregar_empelado(lista_empleados:list[dict],datos:dict,empleado:dict)->str:
     
     lista_empleados.append(empleado)
     datos["id_actual"] += 1
-    retorno = f"\n¡El empleado con el ID: {empleado['id']} fue agregado exitosamente!"
-    return retorno
+    print(f"\n¡El empleado con el ID: {empleado['id']} fue agregado exitosamente!")
+    
 #--------------------------------------------------------------------------------------------
+def nuevo_empleado(datos:dict)->bool:
+
+    empleado = crear_empleado(datos["id_actual"])
+    agregar_empelado(lista_empleados, datos, empleado) 
+    lista_vacia = validad_lista(lista_empleados)
+    return lista_vacia  
+    
