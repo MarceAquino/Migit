@@ -66,5 +66,5 @@ def validad_lista(lista_empleados:list[dict])-> bool:
     if longitud > 0:
         mensaje = True
     return mensaje    
-
+#----------------------------------------------------------------------------------------------------------------
         

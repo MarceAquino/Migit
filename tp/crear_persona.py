@@ -1,4 +1,5 @@
 from funciones_validaciones import *
+
 #--------------------------------------------------------------------------------------------
 def crear_empleado(id_actual: int)->dict:
     nombre = validar_nombre_apellido("nombre").capitalize()

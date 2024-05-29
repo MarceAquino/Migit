@@ -3,7 +3,7 @@ from data import lista_empleados
 from b_funciones_sub_menu import *
 from mostrar_datos import *
 from funcion_calculo import *
-
+#----------------------------------------------------------------------------------------------------------------
 def mostrar_menu()->None:
     print("""
         1. Dar de alta.
@@ -14,7 +14,7 @@ def mostrar_menu()->None:
         6. Calcular salario promedio.
         7. Salir.
         """)
-
+#----------------------------------------------------------------------------------------------------------------
 def mostar_menu(lista_empleados:list)->None:
     print ("\n=====¡Bienvenidos al programa para altas,bajas y modificaciones de empleados!=====\n")
     datos = { "id_actual": 1}
@@ -43,7 +43,8 @@ def mostar_menu(lista_empleados:list)->None:
                 mostrar_personas_por_puesto(lista_empleados,"Gerente")
             elif opcion == 6:
                 calcular_promedio(lista_empleados, "salario")  
-        
+#----------------------------------------------------------------------------------------------------------------       
     
-
 mostar_menu(lista_empleados)
+
+#----------------------------------------------------------------------------------------------------------------

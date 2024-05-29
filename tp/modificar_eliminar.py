@@ -1,6 +1,7 @@
 from data import lista_empleados
 from funciones_validaciones import *
 
+#----------------------------------------------------------------------------------------------------------------
 def modificar_dato(validacion:str,clave:str)->str:
     
     for i in range(len(lista_empleados)):
@@ -9,7 +10,7 @@ def modificar_dato(validacion:str,clave:str)->str:
         retorno = f"se modifico el {clave}."
 
     return retorno    
-
+#----------------------------------------------------------------------------------------------------------------
 def eliminar_empleado(lista_empleados:list[dict])->str:
     retorno = ""
     bandera_existe = False
@@ -23,3 +24,4 @@ def eliminar_empleado(lista_empleados:list[dict])->str:
     if bandera_existe == False:
         retorno = "Error, no existe una persona con ese dni:"
     return retorno    
+#----------------------------------------------------------------------------------------------------------------
