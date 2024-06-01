@@ -1,15 +1,18 @@
 from data import lista_empleados
 from funciones_validaciones import *
+from funcion_calculo import obtener_dato
 
 #----------------------------------------------------------------------------------------------------------------
 def modificar_dato(validacion:str,clave:str)->str:
     
     for i in range(len(lista_empleados)):
         dato = validacion
-        lista_empleados[i][clave] = dato
-        retorno = f"se modifico el {clave}."
+        elemento = obtener_dato(lista_empleados[i],clave)
+        if dato == elemento:
+            lista_empleados[i][clave] = dato
+            retorno = f"se modifico el {clave}."
+            return retorno    
 
-    return retorno    
 #----------------------------------------------------------------------------------------------------------------
 def eliminar_empleado(lista_empleados:list[dict])->None:
     
