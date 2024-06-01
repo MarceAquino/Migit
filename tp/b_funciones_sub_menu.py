@@ -15,7 +15,7 @@ def mostrar_submenu()->None:
 def submenu(lista_empleados: list[dict])->None:
 
     print("¡Bienvenido al menu de modificaciones!\n")
-    validar_existencia_id(lista_empleados)
+    numero_id = validar_existencia_id(lista_empleados)
     retorno = ""
     bandera = False
 
@@ -24,16 +24,16 @@ def submenu(lista_empleados: list[dict])->None:
         opcion = validar_opcion_menu()
         match opcion:
             case "a":
-                modificar_dato(validar_nombre_apellido("nombre: ").capitalize(),"nombre")
+                modificar_dato(validar_nombre_apellido("nombre").capitalize(),"nombre",numero_id)
                 bandera = True
             case "b":
-                modificar_dato(validar_nombre_apellido("apellido: ").capitalize(),"apellido")
+                modificar_dato(validar_nombre_apellido("apellido").capitalize(),"apellido",numero_id)
                 bandera = True
             case "c":
-                modificar_dato(validar_puesto(),"puesto")
+                modificar_dato(validar_puesto(),"puesto",numero_id)
                 bandera = True
             case "d":
-                modificar_dato(validar_salario(),"salario")
+                modificar_dato(validar_salario(),"salario",numero_id)
                 bandera = True
             case "e":
                 continuar = input("¿Desea salir? si/no: ")

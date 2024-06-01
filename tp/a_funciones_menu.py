@@ -3,52 +3,61 @@ from data import lista_empleados
 from b_funciones_sub_menu import *
 from mostrar_datos import *
 from funcion_calculo import *
-from crear_persona import *
 
-#----------------------------------------------------------------------------------------------------------------
-def mostrar_menu()->None:
-    
+def mostrar_menu():
     print("""
-        1. Dar de alta.
-        2. Modificar.
-        3. Eliminar.
-        4. Mostrar todos.
-        5. Mostrar gerentes.
-        6. Calcular salario promedio.
-        7. Salir.
-        """)
-#----------------------------------------------------------------------------------------------------------------  
-def mostar_menu(lista_empleados: list) -> None:
+        
+            1. Leer desde CSV / JSON
+            2. Dar de alta.
+            3. Modificar.
+            4. Eliminar.
+            5. Mostrar todos.
+            6. Mostrar gerentes.
+            7. Mostrar Analistas con sueldo mayor a $500000.
+            8. Calcular salario promedio.
+            9. Ordenar empleados.
+            10.  Salir.
 
-    print("\n=====¡Bienvenidos al programa para altas, bajas y modificaciones de empleados!=====\n")
-    datos = {"id_actual": 1}
+        """)
+
+def mostar_menu(lista_empleados:list):
+
+    datos = { "id_actual": 1}
+    bandera_continuar = False
     while True:
-        lista_vacia = validad_lista(lista_empleados)
         mostrar_menu()
         opcion = validar_entero("Ingrese una opcion valida: ")
-        print()
-        if opcion == 1:
-            lista_vacia = nuevo_empleado(datos)   
-        elif opcion == 7:
+        if opcion == 2 :
+            empleado = crear_empleado(datos["id_actual"])
+            agregar_empelado(lista_empleados,datos,empleado)
+            bandera_continuar = True
+        elif opcion == 1:
+            pass
+            # Leer desde CSV / JSON
+        elif opcion == 10:
             continuar = input("¿Desea salir? si/no: ")
             if continuar == "si":
                 break
-        if lista_vacia != False:
-            if opcion == 2:
+        if bandera_continuar != False :
+            if opcion == 3:
                 submenu(lista_empleados)
-            elif opcion == 3:
-                eliminar_empleado(lista_empleados)
             elif opcion == 4:
-                mostrar_personas(lista_empleados)
+                eliminar_empleado(lista_empleados)
+                print(lista_empleados)
             elif opcion == 5:
-                mostrar_personas_por_puesto(lista_empleados, "Gerente")
+                mostrar_personas(lista_empleados)
             elif opcion == 6:
-                calcular_promedio(lista_empleados, "salario")
+                mostrar_personas_por_puesto(lista_empleados,"Gerente")
+            elif opcion == 7:
+                #Mostrar Analistas con sueldo mayor a $500000.
+                pass    
+            elif opcion == 8:
+                calcular_promedio(lista_empleados, "salario")  
+            elif opcion == 9:
+                #Ordenar empleados.
+                pass    
         else:
-            print("La lista de empleados está vacía. No se pueden realizar las operaciones 2 a 6.")
-            continue            
-#----------------------------------------------------------------------------------------------------------------       
-    
-mostar_menu(lista_empleados)
+            print("normalizar datos primero")   
+    return lista_empleados 
 
-#----------------------------------------------------------------------------------------------------------------1
+mostar_menu(lista_empleados)
