@@ -1,0 +1,11 @@
+{
+    "persona": [
+        {
+            "id": 1,
+            "nombre": "coco",
+            "apellido": "damian",
+            "puesto": "asistente",
+            "salario": 450000
+        }
+    ]
+}

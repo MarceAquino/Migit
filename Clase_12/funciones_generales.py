@@ -1,4 +1,4 @@
-
+from data_stark import *
 #------------------------------------------------------------------------------------------------------------------------
 def stark_normalizar_datos(Lista_heroes)->None|bool :
     bandera = False
@@ -120,7 +120,6 @@ def mostrar_promedio_dato(lista_heroes:list,clave:str)->list:
                 mensaje = True
         return mensaje 
 #------------------------------------------------------------------------------------------------------------------------      
-
 
 
 

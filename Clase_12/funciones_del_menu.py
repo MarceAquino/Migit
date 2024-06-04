@@ -8,30 +8,22 @@ def encontrar_genero_nb(lista_heroes:list)->None:
         if obtener_dato(lista_heroes[i],"genero") == "NB":
             print(obtener_nombre(lista_heroes[i]))
 #------------------------------------------------------------------------------------------------------------------------              
-def encontrar_mas_alto(lista_heroes:list,genero:str)->None:   
+def encontrar_mas_alto_menor(lista_heroes:list,genero:str,criterio:bool)->None:   
 
     lista_genero = []
 
     for i in range(len(lista_heroes)):
         if obtener_dato(lista_heroes[i],"genero") == genero:
             lista_genero.append(lista_heroes[i]) 
-
-    maximo = obtener_maximo(lista_genero,"altura")
-    datos = obtener_dato_cantidad(lista_heroes,maximo,"altura")
-    stark_imprimir_heroes(datos)
-#------------------------------------------------------------------------------------------------------------------------
-def encontrar_mas_debil(lista_heroes:list,genero:str)->None:
-
-    lista_genero = []
-
-    for i in range(len(lista_heroes)):
-        if obtener_dato(lista_heroes[i],"genero") == genero:
-            lista_genero.append(lista_heroes[i]) 
-
-    minimo = obtener_minimo(lista_genero,"fuerza")
-    datos = obtener_dato_cantidad(lista_heroes,minimo,"fuerza")
-    stark_imprimir_heroes(datos)
-
+    if criterio == True:
+        maximo = obtener_maximo(lista_genero,"altura")
+        datos = obtener_dato_cantidad(lista_genero,maximo,"altura")
+        stark_imprimir_heroes(datos)
+    else:
+        minimo = obtener_minimo(lista_genero,"fuerza")
+        datos = obtener_dato_cantidad(lista_heroes,minimo,"fuerza")
+        stark_imprimir_heroes(datos)
+    
 #------------------------------------------------------------------------------------------------------------------------
 def listar_atributos(lista_heroes: list,clave:str):
 

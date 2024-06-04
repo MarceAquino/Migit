@@ -32,3 +32,16 @@ def calcular_promedio(lista_empleado:list,clave:str) -> None:
     resultado = print(f"El promedio de los sueldos es: {promedio}")
     return resultado
 #------------------------------------------------------------------------------------------------------------------------ 
+def obtener_maximo(lista:list)->int|float|bool:
+
+    maximo = None
+    bandera = True
+    mensaje = False
+    for i in range(len(lista)):
+        dato = lista[i]
+        if bandera == True or dato > maximo:
+            maximo = dato
+            mensaje = maximo
+            bandera = False                
+    
+    return mensaje

@@ -1,10 +1,10 @@
 from crear_persona import *
-from data import lista_empleados
 from b_funciones_sub_menu import *
-from mostrar_datos import *
+from mostrar_cargar_datos import *
 from funcion_calculo import *
 
-def mostrar_menu():
+lista_empleados = []
+def imprimir_menu():
     print("""
         
             1. Leer desde CSV / JSON
@@ -19,31 +19,40 @@ def mostrar_menu():
             10.  Salir.
 
         """)
+def mostrar_menu(lista_empleados:list):
 
-def mostar_menu(lista_empleados:list):
-
-    datos = { "id_actual": 1}
-    bandera_continuar = False
+    
+    bandera_continuar = validar_lista_vacia(lista_empleados)
     while True:
-        mostrar_menu()
+        lista_id = validar_id(lista_empleados)
+        imprimir_menu()
         opcion = validar_entero("Ingrese una opcion valida: ")
         if opcion == 2 :
-            empleado = crear_empleado(datos["id_actual"])
-            agregar_empelado(lista_empleados,datos,empleado)
-            bandera_continuar = True
+            empleado = crear_empleado(validar_id(lista_empleados))
+            agregar_empleado(lista_empleados,empleado)
+            
         elif opcion == 1:
-            pass
-            # Leer desde CSV / JSON
+
+            cargar = input("""\nIngrese desde donde desea cargar la lista de empleados a/b: """)
+            while cargar != "a" and cargar != "b":
+                print("Error ingrese una opcion valida")
+                cargar = input("""\nIngrese desde donde desea cargar la lista de empleados a/b: """)
+            if cargar == "a":    
+                lista_empleados = cargar_personas_desde_csv(r"Migit\tp\empleados.csv")
+            else:    
+                lista_empleados = cargar_personas_desde_json(r"Migit\tp\empleados.json")
+
+            print(validar_id(lista_empleados))
+
         elif opcion == 10:
             continuar = input("¿Desea salir? si/no: ")
             if continuar == "si":
                 break
-        if bandera_continuar != False :
+        if bandera_continuar != validar_lista_vacia(lista_empleados) :
             if opcion == 3:
                 submenu(lista_empleados)
             elif opcion == 4:
                 eliminar_empleado(lista_empleados)
-                print(lista_empleados)
             elif opcion == 5:
                 mostrar_personas(lista_empleados)
             elif opcion == 6:
@@ -57,7 +66,11 @@ def mostar_menu(lista_empleados:list):
                 #Ordenar empleados.
                 pass    
         else:
-            print("normalizar datos primero")   
+            print("No se encuentran empleados, cargar al menos 1 empleado")   
     return lista_empleados 
 
-mostar_menu(lista_empleados)
+mostrar_menu(lista_empleados)
+
+# c sharp 
+# tipo de datos
+# sql

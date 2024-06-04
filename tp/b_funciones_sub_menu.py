@@ -24,10 +24,10 @@ def submenu(lista_empleados: list[dict])->None:
         opcion = validar_opcion_menu()
         match opcion:
             case "a":
-                modificar_dato(validar_nombre_apellido("nombre").capitalize(),"nombre",numero_id)
+                modificar_dato(validar_nombre_apellido("nombre").capitalize(),"nombre",numero_id,lista_empleados)
                 bandera = True
             case "b":
-                modificar_dato(validar_nombre_apellido("apellido").capitalize(),"apellido",numero_id)
+                modificar_dato(validar_nombre_apellido("apellido").capitalize(),"apellido",numero_id,lista_empleados)
                 bandera = True
             case "c":
                 modificar_dato(validar_puesto(),"puesto",numero_id)

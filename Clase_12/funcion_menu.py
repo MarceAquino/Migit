@@ -49,13 +49,13 @@ def stark_marvel_app(lista_heroes:list)->int|float|None|bool:
             if opcion == 2:
                 encontrar_genero_nb(lista_personajes)
             elif opcion == 3:
-                encontrar_mas_alto(lista_personajes,"F") 
+                encontrar_mas_alto_menor(lista_personajes,"F",True) 
             elif opcion == 4:
-                encontrar_mas_alto(lista_personajes,"M") 
+                encontrar_mas_alto_menor(lista_personajes,"M",True) 
             elif opcion == 5:
-                encontrar_mas_debil(lista_personajes,"M") 
+                encontrar_mas_alto_menor(lista_personajes,"M",False) 
             elif opcion == 6:
-                encontrar_mas_debil(lista_personajes,"NB") 
+                encontrar_mas_alto_menor(lista_personajes,"NB",False) 
             elif opcion == 7:
                 calcular_promedio_genero(lista_personajes,"NB","fuerza")          
             elif opcion == 8:

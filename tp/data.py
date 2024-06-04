@@ -1,1 +1,4 @@
-lista_empleados = []
+lista_empleados = [
+  
+]
+print (lista_empleados)
