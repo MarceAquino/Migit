@@ -16,6 +16,7 @@ def modificar_dato(validacion:str,clave:str,numero_id:int,lista_empleados:list[d
                 return retorno    
 
 #----------------------------------------------------------------------------------------------------------------
+
 def eliminar_empleado(lista_empleados:list[dict])->None:
     
     id_empleado =validar_entero("Ingrese el id del empleado a eliminar: ")

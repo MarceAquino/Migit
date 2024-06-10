@@ -25,3 +25,4 @@ def calcular_promedio(lista_heroes:list,clave:str) -> float:
     promedio = dividir(suma,cantidad_heroes)
 
     return promedio
+#------------------------------------------------------------------------------------------------------------------------ 

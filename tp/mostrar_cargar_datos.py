@@ -68,8 +68,8 @@ def mostrar_persona(persona:dict)->None:
     return print(mensaje)  
 #---------------------------------------------------------------------------------------------------------------- 
 def mostrar_personas(lista_empeados:list[dict])->None:
-    guardar_csv_persona (lista_empeados,"Migit/tp/empleados.csv")
-    guardar_persona_desde_json(lista_empeados,"Migit/tp/empleados.json")
+    guardar_csv_persona (lista_empeados,r"Programacion\Migit\tp\empleados.csv")
+    guardar_persona_desde_json(lista_empeados,r"Programacion\Migit\tp\empleados.json")
     print("==== Los empleados encontrados son ====\n")
     for i in range (len(lista_empeados)):
         mostrar_persona(lista_empeados[i])

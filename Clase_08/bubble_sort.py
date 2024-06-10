@@ -35,19 +35,27 @@ def bubble_sort_2(lista:list):
         if (intercambio == False):
             break      
 
-def bubble_sort_3(lista:list):
+def bubble_sort_3(lista:list,criterio:str):
     bandera = True
     while bandera == True:
         bandera = False
         for j in range (len(lista)-1): # el primer for intera la cantidad de elementos de la lista. 
                                         # la formula de bubble es n - 1 siendo n la cantidad   
-                                        # se le resta -i para que en cada iteracion reste el indice para q no siga comparando de mas.  
-            if lista[j] > lista[j+1]:
-                auxiliar = lista[j]
-                lista[j] = lista[j+1]
-                lista[j+1] = auxiliar
-                bandera = True
-                   
+            if criterio == True:                            # se le resta -i para que en cada iteracion reste el indice para q no siga comparando de mas.  
+                if lista[j] > lista[j+1]:
+                    auxiliar = lista[j]
+                    lista[j] = lista[j+1]
+                    lista[j+1] = auxiliar
+                    bandera = True
+            else:
+                if lista[j] < lista[j+1]:
+                    auxiliar = lista[j]
+                    lista[j] = lista[j+1]
+                    lista[j+1] = auxiliar
+                    bandera = True
+
+                
+                       
 # mostrar_lista(lista)
 # print("-------------------")
 bubble_sort(lista)

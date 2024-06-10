@@ -24,7 +24,6 @@ def mostrar_menu(lista_empleados:list):
     
     bandera_continuar = validar_lista_vacia(lista_empleados)
     while True:
-        lista_id = validar_id(lista_empleados)
         imprimir_menu()
         opcion = validar_entero("Ingrese una opcion valida: ")
         if opcion == 2 :
@@ -38,11 +37,9 @@ def mostrar_menu(lista_empleados:list):
                 print("Error ingrese una opcion valida")
                 cargar = input("""\nIngrese desde donde desea cargar la lista de empleados a/b: """)
             if cargar == "a":    
-                lista_empleados = cargar_personas_desde_csv(r"Migit\tp\empleados.csv")
+                lista_empleados = cargar_personas_desde_csv(r"Programacion\Migit\tp\empleados.csv")
             else:    
-                lista_empleados = cargar_personas_desde_json(r"Migit\tp\empleados.json")
-
-            print(validar_id(lista_empleados))
+                lista_empleados = cargar_personas_desde_json(r"Programacion\Migit\tp\empleados.json")
 
         elif opcion == 10:
             continuar = input("¿Desea salir? si/no: ")
